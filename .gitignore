@@ -1,0 +1,7 @@
+composer.phar
+/vendor/
+
+.env
+.editorconfig
+composer.lock
+composer.json
