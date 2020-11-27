@@ -4,4 +4,3 @@ composer.phar
 .env
 .editorconfig
 composer.lock
-composer.json

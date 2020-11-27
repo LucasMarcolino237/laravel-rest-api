@@ -35,8 +35,8 @@ Route::namespace('API')->name('api.')->group(function(){
 
     Route::prefix('logs')->group(function(){
 
-        Route::get('/{start}/{limit}', [UserLogsController::class, ('index')]);
-        Route::get('/{id}/{start}/{limit}', [UserLogsController::class, ('show')]);
+        Route::get('/', [UserLogsController::class, ('index')]);
+        Route::get('/{id}', [UserLogsController::class, ('show')]);
     });
     
 });
