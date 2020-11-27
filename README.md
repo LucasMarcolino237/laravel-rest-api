@@ -17,12 +17,12 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 # Clone este repositório
 $ git clone <https://github.com/LucasMarcolino237/laravel-rest-api>
 
-# Acesse a pasta do projeto no terminal/cmd
-$ cd laravel-rest-api
-
 # Copie o arquivo .env.example e renomeie como .env
 
 # Configure seu banco de dados dentro do arquivo .env
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd laravel-rest-api
 
 # Instale as dependências
 $ composer install
