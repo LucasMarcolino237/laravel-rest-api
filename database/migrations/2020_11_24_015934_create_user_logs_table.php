@@ -16,7 +16,7 @@ class CreateUserLogsTable extends Migration
         Schema::create('user_logs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->json('data_old');
+            $table->json('data_old')->nullable();
             $table->json('data_new');
             $table->timestamps();
         });

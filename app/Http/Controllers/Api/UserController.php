@@ -56,7 +56,11 @@ class UserController extends Controller
      */
     public function show(User $id)
     {
-        $data = ['data' => $id, $id->with(UserLogs::class)->get()];
+        $user_logs = $id->logs();
+        $data = [
+            'data' => $id, 
+            'logs' => $user_logs->paginate(5)
+        ];
         return response()->json($data);
     }
 

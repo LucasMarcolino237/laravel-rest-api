@@ -29,25 +29,11 @@ class User extends Authenticatable
         'country'
 
     ];
+
+    
     public function logs()
     {
-        return $this->hasMany(UserLogs::class, 'id');
+        return $this->hasMany(UserLogs::class);
     }
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    // protected $hidden = [
-    //     'user_logs',
-    // ];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    // protected $casts = [
-    //     'email_verified_at' => 'datetime',
-    // ];
+   
 }
