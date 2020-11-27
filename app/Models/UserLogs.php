@@ -4,19 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class UserLogs extends Model
 {
     use HasFactory;
 
-    $fillable = [
+    protected $fillable = [
         'user_id',
         'data_old',
         'data_new'
     ];
 
-    public function logs()
+    public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

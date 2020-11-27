@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\UserLogs;
 
 class UserController extends Controller
 {
@@ -37,7 +38,7 @@ class UserController extends Controller
             $userData = $request->all();
             $this->user->create($userData);
 
-            return response()->json(['msg' => 'Produto criado com sucesso!'], 201);
+            return response()->json(['msg' => 'Usuário criado com sucesso!'], 201);
 
         } catch (\Exeption $e) {
             if(config('app.debug')) {
@@ -55,7 +56,7 @@ class UserController extends Controller
      */
     public function show(User $id)
     {
-        $data = ['data' => $id];
+        $data = ['data' => $id, $id->with(UserLogs::class)->get()];
         return response()->json($data);
     }
 
@@ -72,9 +73,10 @@ class UserController extends Controller
 
             $userData = $request->all();
             $user     = $this->user->find($id);
+
             $user->update($userData);
 
-            return response()->json(['msg' => 'Produto atualizado com sucesso!'], 201);
+            return response()->json(['msg' => ['Usuário atualizado com sucesso!']], 201);
 
         } catch (\Exeption $e) {
             if(config('app.debug')) {
