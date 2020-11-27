@@ -2,7 +2,7 @@
 ## API RestFul criada para o teste de Back-End da empresa EPICS
 
 <h4>
-    🚧 API RestFul usando Laravel - Em construção... 🚧
+    API RestFul usando Laravel - Finalizado
 </h4>
 
 ### Pré-requisitos
